@@ -1,11 +1,6 @@
-div
+.app
 {
     text-align: center;
-}
-
-body
-{
-    background-color: grey;
     float: center;
     position: absolute;
     left: 800px;
@@ -14,15 +9,12 @@ body
     margin-top: -150px;
 }
 
-
-.ceneter
+body
 {
-    width: 300 px;
-    height: 300 px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin-left: -150px;
-    margin-top: -150px;
+    background-color: grey;
 }
 
+.listed
+{
+    float: left;
+}

@@ -1,18 +1,33 @@
 <!DOCTYPE html>
 
-<html lang="en-US">
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-<script src="reminder.js"></script>
-<link rel="stylesheet" type="text/css" href="style.css">
-<title>Listing App</title>
-
-<body>
+<html lang="en-US" ng-app="reminderApp">
+  <!-- loads angular source -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
   
-  <div ng-app="">
-    <p>Let me remind that for you : <input type="text" size= "60" ng-model="remind"></p>
-    <h1>Listing {{remind}}</h1>
-    <input type="submit" value="Submit"> 
-  </div>
-</body>
+  <!-- CSS source code-->
+  <link rel="stylesheet" type="text/css" href="style.css">
+  
+  <!-- controller source code-->
+  <script src="javascript/controller.js"></script>
+  
+  <title>Listing App</title>
+  
+  <body ng-controller="ReminderController">
+    
+    <!--Listing tasks div section-->
+    <div class="app">
+      <h1>Please enter desired task for me to remind you</h1>
+      <input type="text" ng-model="inputTask" placeholder="Enter Desired Task To Remember" ng-init="userText" size="60" required>
+      <button type="submit">Submit</button>
+    </div>
+    
+    <!--Listed Task div section.-->
+    <div class="listed">
+      <h1>Listed Tasks</h1>
+
+    </div>
+  
+  
+  </body>
 
 </html>
