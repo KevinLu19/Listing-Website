@@ -1,33 +1,43 @@
-<!DOCTYPE html>
+<!------------------------------------------------------------------------------------------
+  Author: Kevin Lu
+  Date: May 26th, 2019
+  Purpose: The skeleton of the website. Does all of the necessary structures for the website.
+  Modification: - Moved around different locations of the controller in 
+                  order to add another <div> section.
+  ------------------------------------------------------------------------------------------>
 
-<html lang="en-US" ng-app="reminderApp">
-  <!-- loads angular source -->
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-  
-  <!-- CSS source code-->
-  <link rel="stylesheet" type="text/css" href="style.css">
-  
-  <!-- controller source code-->
-  <script src="javascript/controller.js"></script>
-  
-  <title>Listing App</title>
-  
-  <body ng-controller="ReminderController">
-    
-    <!--Listing tasks div section-->
-    <div class="app">
-      <h1>Please enter desired task for me to remind you</h1>
-      <input type="text" ng-model="inputTask" placeholder="Enter Desired Task To Remember" ng-init="userText" size="60" required>
-      <button type="submit">Submit</button>
-    </div>
-    
-    <!--Listed Task div section.-->
-    <div class="listed">
-      <h1>Listed Tasks</h1>
+  <!DOCTYPE html>
 
-    </div>
-  
-  
+<html>
+    <head>
+        <title>RemindMe</title>
+        <!-- Including Angular.js from file directory -->
+        <script src="app/lib/angular.js"></script>
+        <!-- CSS source code-->
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="javascript/controller.js"></script>
+    </head>
+
+  <body ng-app="reminderMe">
+    <!--Creating Task Div section-->
+    <div ng-controller="taskEntered" id="userController" class="taskCreator">
+      <div id="EnterTsk">
+          <h1>Enter Task</h1>
+      </div>
+
+      <form ng-submit="addButton()">
+      <input type="text" ng-model="inputTask" id="userInput" size=40 placeholder="Enter Task">
+      <button id="taskButton">Submit</button>
+      </form>
+
+      <div id="listingTask">
+        <h1>Listing Task</h1>
+        <ul>
+            <li ng-repeat="tsk in tasks track by $index">{{ tsk }} <button ng-click="delete()">x</button></li>
+        </ul>
+      </div>
+      
+  </div>
+
   </body>
-
 </html>

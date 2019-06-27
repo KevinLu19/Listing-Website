@@ -1,4 +1,77 @@
-.app
+/*
+==============================================================================
+Author: Kevin Lu 
+Date: May 26th, 2019
+Purpose: CSS which will change the property of the HTML.
+Modification: - After added ID to two different <div> sections within 
+                <body> tag, changed it so we can apply rules to specific <div> 
+            - Cleaned up some unneeded properties and added property for button 
+            to be aligned together with input task.
+==============================================================================
+*/
+
+body
+{
+    background-color: grey;
+}
+
+/*Add features to the input section*/
+#userInput
+{
+    font-size: 15 px;
+    width: 80%;
+    padding: 10 px;
+    float: left;
+    border: none;
+    margin: 0;
+    border-radius: 0;
+}
+
+#taskButton
+{
+    font-size: 15 px;
+    padding: 10 px;
+    float: left;
+    border: none;
+    margin: 0;
+    border-radius: 0;
+}
+
+/*Adds property onto submit button*/
+#inputButton
+{
+    float: left;
+    padding: 10 px;
+    border: none;
+    margin: 0;
+    border-radius: 0;
+}
+
+/* CSS Property applied to the listing tasks part of ul tag*/
+ul li
+{
+    cursor: pointer;
+    padding: 10 px 8 px 10 px 40 px;
+    font-size: 15 px;
+    transition: 0.2s;
+
+    /* Making tasks unavailable to be selected. Applies to Safari, FireFox, Edge */
+    user-select: none; 
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+}
+
+/* Applies when a task is clicked on, applies struck through indicating task completed */
+ul li.checked
+{
+    text-decoration: line-through;
+    background: #747373;
+    color: white;
+}
+
+/* CSS property applied to task entered area */
+#userController
 {
     text-align: center;
     float: center;
@@ -9,12 +82,23 @@
     margin-top: -150px;
 }
 
-body
-{
-    background-color: grey;
-}
-
-.listed
+#EnterTsk
 {
     float: left;
+    width: 344px;
+    border: 15 px;
+    padding: 1 px;
+    margin: 10 px;
+    text-align: center;
+}
+
+/* Listing Task Section */
+#listingTask
+{
+    float: left;
+    width: 344px;
+    border: 15 px;
+    padding: 1 px;
+    margin: 10 px;
+    background: violet;
 }
