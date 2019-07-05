@@ -7,12 +7,13 @@ Modification: - After added ID to two different <div> sections within
                 <body> tag, changed it so we can apply rules to specific <div> 
             - Cleaned up some unneeded properties and added property for button 
             to be aligned together with input task.
+            - Changed the coloring of Listing tasks.
 ==============================================================================
 */
 
 body
 {
-    background-color: grey;
+    background-color: #40403f;
 }
 
 /*Add features to the input section*/
@@ -95,10 +96,57 @@ ul li.checked
 /* Listing Task Section */
 #listingTask
 {
-    float: left;
+    float: right;
     width: 344px;
     border: 15 px;
     padding: 1 px;
     margin: 10 px;
-    background: violet;
+    background: #40403f;
+}
+
+/*For the side menu bar*/
+.sideClass 
+{
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: black;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sideClass a 
+{
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;color: gray;
+    display: block;
+    transition: 0.3s;
+    font-size: 25px;
+    color: gray;
+    display: block;
+    transition: 0.3s;
+}
+
+.sideClass a:hover 
+{
+    color: white;
+}
+
+.sideClass .closeButton 
+{
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) 
+{
+    .sideClass {padding-top: 15px;}
+    .sideClass a {font-size: 18px;}
 }

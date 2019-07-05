@@ -42,3 +42,15 @@ angular.module('reminderMe', [])
         }
     }, false);
 })
+
+// For opening side menu
+function openNav()
+{
+    document.getElementById("sideBar").style.width = "300px";
+}
+
+// For closing side menu
+function closeNav()
+{
+    document.getElementById("sideBar").style.width = "0";
+}
